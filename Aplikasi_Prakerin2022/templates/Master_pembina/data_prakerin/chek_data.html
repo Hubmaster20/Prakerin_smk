@@ -1,0 +1,200 @@
+{% include "head_atas_pembina.html" %}
+{% include "sub_menu_pembina.html" %}
+<div class="row">
+              <div class="col-xs-12">
+                <!-- PAGE CONTENT BEGINS -->
+
+                <div class="error-container">
+                  <div class="well">
+                    <h2 class="grey lighter smaller">
+                      <span class="blue bigger-125">
+                        <i class="ace-icon fa fa-user"></i>
+                        PELAKSANAAN PRAKERIN
+                      </span>
+                      Proses Mengelompokkan Siswa Prakerin  <i class="ace-icon fa fa-wrench icon-animated-wrench bigger-125"></i>
+                    </h2>
+
+                    <hr />
+                    <h3 class="lighter smaller">
+                    <u>Silakan Lakukan Pengelompokan Data Siswa Yang Sudah Terpanggil Disini...</u>
+                    </h3>
+                    <div class="hr hr-18 dotted hr-double"></div> 
+                    <div class="space"></div>
+                    <!-- start -->
+                    <div>
+                  <div id="user-profile-1" class="user-profile row">
+                    <div class="col-xs-12 col-sm-3 center">
+                      <div>
+                        <span class="profile-picture">
+                          <img id="avatar" class="editable img-responsive" alt="Foto" src="{{panggil.foto.url}}" />
+                        </span>
+
+                        <div class="space-4"></div>
+
+                        <div class="width-80 label label-success label-xlg arrowed-in arrowed-in-right">
+                          <div class="inline position-relative">
+                            <a href="#" class="user-title-label dropdown-toggle" data-toggle="dropdown">
+                              <i class="ace-icon fa fa-circle light-green"></i>
+                              &nbsp;
+                              <span class="white">{{panggil.nama}}</span>
+                            </a>
+
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="space-6"></div>
+                      <div class="hr hr12 dotted"></div>
+                      <div class="clearfix">
+                        <div class="grid2">
+                          <span class="bigger-175 blue">Kelas : {{panggil.kelas}}</span>
+                        </div>
+                      </div>
+                    </div>
+                    <form method="post">
+                      {% csrf_token %}
+                      <input type="hidden" name="nis" value="{{panggil.nis}}">
+                      <input type="hidden" name="nama_siswa" value="{{panggil.nama}}">
+                    <div class="col-xs-12 col-sm-9">
+                      <div class="space-12"></div>
+
+                      <div class="profile-user-info profile-user-info-striped">
+                        <div class="profile-info-row">
+                          <div class="profile-info-name"> Nama Lengkap </div>
+
+                          <div class="profile-info-value">
+                            <span class="editable" id="username">{{panggil.nama}}</span>
+                          </div>
+                        </div>
+
+                        <div class="profile-info-row">
+                          <div class="profile-info-name"> NIS </div>
+
+                          <div class="profile-info-value">
+                            <span class="editable" id="country">{{panggil.nis}}</span>
+                            
+                          </div>
+                        </div>
+
+                        <div class="profile-info-row">
+                          <div class="profile-info-name"> Alamat </div>
+
+                          <div class="profile-info-value">
+                            <span class="editable" id="age">{{panggil.alamat}}</span>
+                          </div>                          
+                        </div>
+                        <div class="profile-info-row">
+                          <div class="profile-info-name"> 
+                            <i class="ace-icon fa fa-hand-o-right blue"></i> PROSES</div>
+                          <div class="profile-info-value">
+                            <span class="editable" id="signup"><u><b>PENEMPATAN PRAKERIN</b></u></span>
+                          </div>
+                        </div>
+                        
+                        <div class="profile-info-row">
+                          <div class="profile-info-name">ID Prakerin</div>
+                          <div class="profile-info-value">
+                            <span class="editable" id="login">
+                              <input type="text" name="id_prakerin" required placeholder="Enter ID" class="form-control">
+                            </span>
+                          </div>
+                        </div>
+                        <div class="profile-info-row">
+                          <div class="profile-info-name">Nama DUDI</div>
+                          <div class="profile-info-value">
+                            <span class="editable" id="login">
+                              <select class="form-control" name="nama_dudi" required>
+                                <option value="">--Select Data--</option>
+                                {% for tampil in data_dudi %}
+                                <option>{{tampil.nama_dudi}}</option>
+                                {% endfor %}          
+                              </select>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="profile-info-row">
+                          <div class="profile-info-name">Alamat DUDI</div>
+                          <div class="profile-info-value">
+                            <span class="editable" id="login">
+                              <input type="text" name="alamat" required placeholder="Enter Alamat" class="form-control">
+                            </span>
+                          </div>
+                        </div>
+                        <div class="profile-info-row">
+                          <div class="profile-info-name">Pembina</div>
+                          <div class="profile-info-value">
+                            <span class="editable" id="login">
+                              <select class="form-control" name="pembina" required>
+                                <option value="">--Select Data--</option>
+                                {% for tampil in select_wali %}
+                                <option>{{tampil.nama_lengkap}}</option>
+                                {% endfor %}          
+                              </select>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="profile-info-row">
+                          <div class="profile-info-name">Kelompok</div>
+                          <div class="profile-info-value">
+                            <span class="editable" id="login">
+                              <select class="form-control" name="kelompok" required>
+                                <option value="">--Select Data--</option>
+                                <option>Kelompok 1</option>
+                                <option>Kelompok 2</option>
+                                <option>Kelompok 3</option>
+                                <option>Kelompok 4</option>
+                                <option>Kelompok 5</option>
+                                <option>Kelompok 6</option>
+                                <option>Kelompok 7</option>
+                              </select>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="profile-info-row">
+                          <div class="profile-info-name">Jumlah Kelompok</div>
+                          <div class="profile-info-value">
+                            <span class="editable" id="login">
+                              <input type="text" name="jumlah_kelompok" required placeholder="Enter Jumlah Kelompok" class="form-control">
+                            </span>
+                          </div>
+                        </div>
+                        <div class="profile-info-row">
+                          <div class="profile-info-name">Tanggal Prakerin</div>
+                          <div class="profile-info-value">
+                            <span class="editable" id="login">
+                              <input type="text" name="tgl_prakerin" required placeholder="Enter Tanggal Prakerin" class="form-control">
+                            </span>
+                          </div>
+                        </div>
+                        <div class="profile-info-row">
+                          <div class="profile-info-name">Keterangan</div>
+                          <div class="profile-info-value">
+                            <span class="editable" id="login">
+                              <textarea name="keterangan" class="form-control" required placeholder="Enter Keterangan"></textarea>
+                            </span>
+                          </div>
+                        </div>
+
+                        
+                    </div></div></div>
+                    <!-- end -->
+
+                    <div class="center">
+                      <a href="{% url 'Tambah_prakerin'%}" class="btn btn-grey">
+                        <i class="ace-icon fa fa-arrow-left"></i>
+                        Go Back
+                      </a>
+
+                      <button type="submit" class="btn btn-primary">
+                        <i class="ace-icon fa fa-arrow-right icon-on-right bigger-110"></i>
+                        Submit
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+              
+                <!-- PAGE CONTENT ENDS -->
+              </div><!-- /.col -->
+            </div><!-- /.row -->
+{% include "head_bawah_pembina.html" %}

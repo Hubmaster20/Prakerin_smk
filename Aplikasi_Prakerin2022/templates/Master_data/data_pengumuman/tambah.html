@@ -1,0 +1,49 @@
+{% include "head_atas.html" %}
+{% include "sub_menu.html" %}
+<div class="row">
+<div class="col-sm-2"></div>
+<div class="col-sm-7">
+<div class="widget-box">
+<div class="widget-header">
+<h4 class="widget-title">FORM TAMBAH DATA PENGUMUMAN PRAKERIN</h4>
+</div>
+
+<div class="widget-body">
+<div class="widget-main no-padding">
+<form method="post">
+	{% csrf_token %}
+<fieldset>
+<label>ID Pengumuman</label>
+<input type="text" name="id_pengumuman" onkeypress="return event.charCode >=48 && event.charCode <=57" required class="form-control" placeholder="Enter ID Pengumuman" />
+<label>Nama Pengumuman</label>
+<input type="text" name="nama_pengumuman" onkeypress="return event.charCode < 48 || event.charCode >57" required class="form-control" placeholder="Enter Nama Pengumuman" />
+<label>Tgl Pelaksanaan</label>
+<input type="text" name="tgl_pelaksanaan" required class="form-control" />
+<label>Keterangan Pelaksaan Prakerin</label>
+<textarea class="form-control" name="keterangan" required></textarea>
+
+</fieldset>
+
+<div class="form-actions center">
+<a href="{% url 'Pengumuman' %}" class="btn btn-prev btn-sm">
+<i class="ace-icon fa fa-arrow-left"></i>
+Cancel
+</a>
+<button type="reset" class="btn btn-warning btn-sm">
+	<i class="fa fa-refresh"></i> Reset
+</button>	
+<button type="submit" class="btn btn-sm btn-success">
+Submit
+<i class="ace-icon fa fa-arrow-right icon-on-right bigger-110"></i>
+</button>
+</div>
+</form>
+												</div>
+											</div>
+										</div>
+									</div>
+
+</div>
+
+
+{% include "head_bawah.html" %}

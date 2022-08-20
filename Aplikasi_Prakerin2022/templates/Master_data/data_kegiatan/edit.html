@@ -1,0 +1,52 @@
+{% include "head_atas.html" %}
+{% include "sub_menu.html" %}
+<div class="row">
+<div class="col-sm-2"></div>
+<div class="col-sm-7">
+<div class="widget-box">
+<div class="widget-header">
+<h4 class="widget-title">FORM EDIT DATA DUDI PRAKERIN</h4>
+</div>
+
+<div class="widget-body">
+<div class="widget-main no-padding">
+<form method="post">
+	{% csrf_token %}
+<fieldset>
+<label>ID Dudi</label>
+<input type="text" name="id_dudi" required class="form-control" onkeypress="return event.charCode >=48 && event.charCode <=57" placeholder="Enter ID" value="{{edit_dudi.id_dudi}}" />
+<label>Nama Dudi</label>
+<input type="text" name="nama_dudi" onkeypress="return event.charCode < 48 || event.charCode >57" required class="form-control" placeholder="Enter Nama Dudi" value="{{edit_dudi.nama_dudi}}" />
+<label>Tempat Dudi</label>
+<input type="text" name="tempat_dudi" onkeypress="return event.charCode < 48 || event.charCode >57" required class="form-control" placeholder="Enter Tempat Dudi" value="{{edit_dudi.tempat_dudi}}" />
+<label>Alamat</label>
+<input type="text" name="alamat" required class="form-control" placeholder="Enter Alamat" value="{{edit_dudi.alamat}}" />
+<label>Telp</label>
+<input type="text" name="telp" required class="form-control" placeholder="Enter Telp" value="{{edit_dudi.telp}}" />
+<label>Ketua Dudi</label>
+<input type="text" name="ketua_dudi" onkeypress="return event.charCode < 48 || event.charCode >57" required class="form-control" placeholder="Enter Ketua Dudi" value="{{edit_dudi.ketua_dudi}}" />
+</fieldset>
+
+<div class="form-actions center">
+<a href="{% url 'Dudi' %}" class="btn btn-prev btn-sm">
+<i class="ace-icon fa fa-arrow-left"></i>
+Cancel
+</a>
+<button type="reset" class="btn btn-warning btn-sm">
+	<i class="fa fa-refresh"></i> Reset
+</button>	
+<button type="submit" class="btn btn-sm btn-success">
+Submit
+<i class="ace-icon fa fa-arrow-right icon-on-right bigger-110"></i>
+</button>
+</div>
+</form>
+												</div>
+											</div>
+										</div>
+									</div>
+
+</div>
+
+
+{% include "head_bawah.html" %}

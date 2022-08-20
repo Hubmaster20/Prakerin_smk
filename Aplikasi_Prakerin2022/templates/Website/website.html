@@ -1,0 +1,204 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.1.1">
+    <title>Aplikasi Prakerin</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/blog/">
+
+    <!-- Bootstrap core CSS -->
+<link href="/static/web/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="/static/web/blog.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+  <header class="blog-header py-3">
+    <div class="row flex-nowrap justify-content-between align-items-center">
+      <div class="col-4 pt-1">
+       
+      </div>
+      <div class="col-4 text-center">
+        <div style="font-size: 20px;"><marquee>Welcome Aplikasi Prakerin SMK Darul Faizin (2022)</marquee></div>
+      </div>
+      <div class="col-4 d-flex justify-content-end align-items-center">
+       
+        <a class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#exampleModal" href="#">Sign up</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-scroller py-1 mb-2">
+    <nav class="nav d-flex justify-content-between">
+      <!-- <a class="p-2 text-muted" href="#">
+        <i class="fa afa-file"></i>
+      Pengumuman Prakerin</a>
+       -->
+    </nav>
+  </div>
+
+  
+      <!-- <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p> -->
+    </div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-md-6">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-350 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block">PROFIL SMK DARUL FAIZIN</strong>
+          <h3 class="mb-0">Tentang SMK</h3>
+          <div class="mb-1 text-muted">06-Desember-2021</div>
+          <p class="card-text mb-auto">
+              SMK Darul Faizin merupakan sekolah jenjang teratas dengan hanya memiliki jurusan Teknik Komputer Jaringan (TKJ).
+          </p>
+          <!-- <a href="#" class="stretched-link">Continue reading</a> -->
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img src="/static/Images/logo.jpg" style="width: 155px">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-350 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <h3 class="mb-0">Visi dan Misi SMK Darul Faizin</h3>
+          <strong class="d-inline-block mb-2">Visi</strong>
+          <p class="mb-auto">
+            "Terbentuknya lulusan Teknik Komputer dan Jaringan yang kompeten, siap kerja yang berwawasan teknologi dan berakhlakul karimah"
+          </p>
+          <strong class="d-inline-block mb-2">Misi</strong>
+          <p class="mb-auto"> 1.Membentuk insan yang beriman, bertaqwa dan memiliki ilmu pengetahuan dan teknologi.
+          <p class="mb-auto">2. pendidikan teknologi informasi dengan focus keahlian dibidang Teknik Komputer dan Jaringan. </p> 
+          <p class="mb-auto">3. Menyelenggarakan proses pembelajaran yang sesuai dengan budaya local dan nasional yang berakar pada nilai - nilai agama dan budaya bangsa.</p>
+          <p class="mb-auto">4. Mengembangkan sistem pendidikan dan pelatihan yang produktif, fleksibel dan berwawasan global</p>
+          
+</p>
+          <!-- <a href="#" class="stretched-link">Continue reading</a> -->
+        </div>
+       
+      </div>
+    </div>
+  </div>
+</div>
+
+<main role="main" class="container">
+  <div class="row">
+    <div class="col-md-8 blog-main">
+      <h3 class="pb-4 mb-4 font-italic border-bottom">
+        Pemberitahuan Praktek Kerja Lapangan (Prakerin)
+      </h3>
+
+      {% for tampil in data %}
+      <div class="blog-post">
+        
+        <h3 class="blog-post-title">{{tampil.nama_pengumuman}}</h3>
+        <p class="blog-post-meta">{{tampil.tgl_pelaksanaan}}</p>        
+        <p>{{tampil.keterangan}}</p>
+        <hr>
+        
+      </div><!-- /.blog-post -->
+      {% endfor %}
+
+
+      
+
+    </div><!-- /.blog-main -->
+
+    
+
+
+
+      <!-- login -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <table>
+          <tr>
+            <td>
+              <img src="/static/Images/admin.png" style="width:80px">
+            </td>
+            <td style="font-size: 18px;"><b>Login Siswa Prakerin</b></td>
+          </tr>          
+        </table>
+        <hr>
+        <form method="get" action="{% url 'login_pr' %}">
+        <label>Username</label>
+        <input type="text" name="cari_nis" value="" required class="form-control" placeholder="Enter (NIS)">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Sigin Prakerin</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>      
+      <!-- endlogin -->
+    </aside><!-- /.blog-sidebar -->
+
+  </div><!-- /.row -->
+
+</main><!-- /.container -->
+
+<footer class="blog-footer">
+  <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+  <p>
+    <a href="#">Back to top</a>
+  </p>
+</footer>
+
+<script src="/static/assets/Show_modal/jquery-3.2.1.slim.min.js"></script>
+<script src="/static/assets/Show_modal/bootstrap.min.js"></script>
+<script type="text/javascript">
+$('#exampleModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var recipient = button.data('whatever') // Extract info from data-* attributes
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var modal = $(this)
+  modal.find('.modal-title').text('New message to ' + recipient)
+  modal.find('.modal-body input').val(recipient)
+})
+</script>
+<script src="/static/assets/js/jquery.nestable.min.js"></script>
+<script type="text/javascript">
+      jQuery(function($){
+      
+        $('.dd').nestable();
+      
+        $('.dd-handle a').on('mousedown', function(e){
+          e.stopPropagation();
+        });
+        
+        $('[data-rel="tooltip"]').tooltip();
+      
+      });
+    </script>
+</body>
+</html>

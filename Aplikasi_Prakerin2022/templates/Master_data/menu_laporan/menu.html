@@ -1,0 +1,124 @@
+{% include "head_atas.html" %}
+{% include "sub_menu.html" %}
+<div class="row">
+<div class="col-sm-1"></div>
+<div class="col-sm-10">
+<div class="widget-box widget-color-grey">
+<div class="widget-header">
+<h4 class="widget-title">
+<i class="fa fa-print"></i>
+MENU LAPORAN</h4>
+
+<div class="widget-toolbar widget-toolbar-light no-border">
+	<b style="color:#000">Start Proses Laporan</b>
+</div>
+</div>
+<div class="">
+										<div class="dd dd-draghandle">
+											<ol class="dd-list">
+
+												<li class="dd-item dd2-item" data-id="15">
+													<div class="dd-handle dd2-handle">
+														<i class="normal-icon ace-icon fa fa-print orange bigger-130"></i>
+														<i class="drag-icon ace-icon fa fa-arrows bigger-125"></i>
+													</div>
+													<div class="dd2-content">Master Laporan Prakerin</div>
+													<ol class="dd-list">
+														<li class="dd-item dd2-item" data-id="15">
+															<div class="dd-handle dd2-handle">
+																<i class="normal-icon ace-icon fa fa-user red bigger-130"></i>
+
+																<i class="drag-icon ace-icon fa fa-arrows bigger-125"></i>
+															</div>
+														
+															<div class="dd2-content">
+															<a href="{% url 'lp_prakerin'%}" target="_blank">
+																Laporan Prakerin (All)
+															</a>
+															<div>
+														<form method="get" target="_blank" action="{% url 'lp_prakerin_kl' %}">
+															Cetak Berdasarkan Kelompok
+															<select name="cetak" onchange="this.form.submit();">
+																<option value="">Select Kelompok</option>
+								<option>Kelompok 1</option>
+                                <option>Kelompok 2</option>
+                                <option>Kelompok 3</option>
+                                <option>Kelompok 4</option>
+                                <option>Kelompok 5</option>
+                                <option>Kelompok 6</option>
+                                <option>Kelompok 7</option>
+															</select>
+														</form>
+															</div>
+															</div>
+														
+														</li>
+
+														<li class="dd-item dd2-item" data-id="15">
+															<div class="dd-handle dd2-handle">
+									<i class="normal-icon ace-icon fa fa-eye green bigger-130"></i>
+
+										<i class="drag-icon ace-icon fa fa-arrows bigger-125"></i>
+															</div>
+															<div class="dd2-content">
+														<a href="{% url 'lp_perjalanan'%}" target="_blank">
+															Laporan Perjalanan (All)
+														</a>
+														<div>
+														<form method="get" target="_blank" action="{% url 'lp_perjalanan_kl' %}">
+															Cetak Berdasarkan Kelompok
+															<select name="cetak" onchange="this.form.submit();">
+																<option value="">Select Kelompok</option>
+								<option>Kelompok 1</option>
+                                <option>Kelompok 2</option>
+                                <option>Kelompok 3</option>
+                                <option>Kelompok 4</option>
+                                <option>Kelompok 5</option>
+                                <option>Kelompok 6</option>
+                                <option>Kelompok 7</option>
+															</select>
+														</form>
+															</div>
+														</div>
+														</li>
+													</ol>
+												</li>
+
+
+												<li class="dd-item dd2-item" data-id="13">
+													<div class="dd-handle dd2-handle">
+														<i class="normal-icon ace-icon fa fa-print blue bigger-130"></i>
+
+														<i class="drag-icon ace-icon fa fa-arrows bigger-125"></i>
+													</div>
+													<div class="dd2-content">
+							<a href="{% url 'lp_siswa'%}" target="_blank">					
+													Laporan SISWA/SISWI (All)
+												</a>
+												</div>
+												</li>
+
+												<li class="dd-item dd2-item" data-id="14">
+													<div class="dd-handle dd2-handle">
+														<i class="normal-icon ace-icon fa fa-print pink bigger-130"></i>
+
+														<i class="drag-icon ace-icon fa fa-arrows bigger-125"></i>
+													</div>
+													<div class="dd2-content">
+											<a href="{% url 'lp_dudi'%}" target="_blank">	
+													Laporan DUDI
+												</a>
+												</div>
+												</li>
+											</ol>
+										</div>
+									</div>
+								</div><!-- PAGE CONTENT ENDS -->
+							</div><!-- /.col -->												
+</div>
+</div>
+</div>
+
+</div>
+
+{% include "head_bawah.html" %}

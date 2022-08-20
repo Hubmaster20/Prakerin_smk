@@ -1,0 +1,74 @@
+{% include "head_atas_pembina.html" %}
+{% include "sub_menu_pembina.html" %}
+<div class="row">
+<div class="col-sm-2"></div>
+<div class="col-sm-7">
+<div class="widget-box">
+<div class="widget-header">
+<h4 class="widget-title">FORM PROSES KOMENTAR PRAKERIN</h4>
+</div>
+
+<div class="widget-body">
+<div class="widget-main no-padding">
+<img src="/static/icon/guru.jpg" style="width: 50px">
+<marquee>Silakan Berikan Komentar Kepada Siswa & Siswi Yang Berada Di (DUDI)</marquee>
+<table  class="table">
+	{% for tampil in data_komentar %}
+	<tr>
+		<td><b>Judul</b></td>
+		<td><b>Komentar</b></td>
+		<td>
+			<img src="/static/icon/icon2.png" style="width: 50px">
+	</tr>
+	<tr>
+		<td>
+			<img src="/static/icon/icon1.png" style="width: 30px">
+			<i>{{ tampil.nama }}</i>
+		</td>
+		<td>
+			<img src="/static/icon/gif.gif" style="width: 50px">{{ tampil.komentar }}
+		</td>
+		<td>
+			<a href="{% url 'Hapus_komentar' tampil.id %}" class="btn btn-xs btn-danger" title="Hapus" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data')">
+			<i class="ace-icon fa fa-trash-o bigger-130"></i>
+			</a>
+		</td>
+	</tr>
+	{% endfor %}	
+</table>
+<hr>
+<form method="post">
+	{% csrf_token %}
+	<input type="hidden" name="nis" value="-">
+	<input type="hidden" name="kelompok" value="-">
+<fieldset>
+<label>Judul Komentar</label>
+<input type="text" name="nama"  required class="form-control" placeholder="Judul Komentar" />
+<label>Komentar</label>
+<textarea class="form-control" name="komentar" rows="9"  placeholder="Enter Komentar"></textarea>
+</fieldset>
+
+<div class="form-actions center">
+<a href="{% url 'Home' %}" class="btn btn-prev btn-sm">
+<i class="ace-icon fa fa-arrow-left"></i>
+Cancel
+</a>
+<button type="reset" class="btn btn-warning btn-sm">
+	<i class="fa fa-refresh"></i> Reset
+</button>	
+<button type="submit" class="btn btn-sm btn-success">
+Submit
+<i class="ace-icon fa fa-arrow-right icon-on-right bigger-110"></i>
+</button>
+</div>
+</form>
+												</div>
+											</div>
+										</div>
+									</div>
+
+</div>
+
+
+
+{% include "head_bawah_pembina.html" %}

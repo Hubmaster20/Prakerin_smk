@@ -1,0 +1,153 @@
+{% include "head_atas.html" %}
+{% include "sub_menu.html" %}
+    <div class="row">
+<div class="col-sm-1"></div>
+<div class="col-sm-10">
+<div class="widget-box widget-color-grey">
+<div class="widget-header">
+<h4 class="widget-title">FORM EDIT DATA PERJALANAN PRAKERIN</h4>
+
+
+
+</div>
+
+<div class="widget-body">
+<div class="widget-main no-padding">
+  <!-- start -->
+                    <div>
+                  <div id="user-profile-1" class="user-profile row">
+                    <div class="col-xs-12 col-sm-3 center">
+                      <div>
+                        <span class="profile-picture">
+                          <img id="avatar" class="editable img-responsive" alt="Foto" src="/static/Images/admin.png" />
+                        </span>
+
+                        <div class="space-4"></div>
+
+                        <div class="width-80 label label-success label-xlg arrowed-in arrowed-in-right">
+                          <div class="inline position-relative">
+                            <a href="#" class="user-title-label dropdown-toggle" data-toggle="dropdown">
+                              <i class="ace-icon fa fa-circle light-green"></i>
+                              &nbsp;
+                              <span class="white">{{edit_per.nama_siswa}}</span>
+                            </a>
+
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="space-6"></div>
+                      <div class="hr hr12 dotted"></div>
+                      <div class="clearfix">
+                        <div class="grid" align="center">
+                          <span class="bigger-175 blue">{{edit_per.nama_kelompok}}</span>
+                        </div>
+                      </div>
+                    </div>
+                    <form method="post">
+                      {% csrf_token %}
+                      <input type="hidden" name="id_prakerin" value="{{edit_per.id_prakerin}}">
+                      <input type="hidden" name="nis" value="{{edit_per.nis}}">
+                      <input type="hidden" name="nama_kelompok" value="{{edit_per.nama_kelompok}}">
+                      <input type="hidden" name="nama_siswa" value="{{edit_per.nama_siswa}}">
+                      <input type="hidden" name="nama_dudi" value="{{edit_per.nama_dudi}}">
+
+                    <div class="col-xs-12 col-sm-9">
+                      <div class="space-12"></div>
+
+                      <div class="profile-user-info profile-user-info-striped">
+                        <div class="profile-info-row">
+                          <div class="profile-info-name"> Nama Lengkap </div>
+
+                          <div class="profile-info-value">
+                            <span class="editable" id="username">{{edit_per.nama_siswa}}</span>
+                          </div>
+                        </div>
+                        <div class="profile-info-row">
+                          <div class="profile-info-name"> NIS </div>
+                          <div class="profile-info-value">
+                            <span class="editable" id="country">{{edit_per.nis}}</span>
+                          </div>
+                        </div>
+                        <div class="profile-info-row">
+                          <div class="profile-info-name"> Nama DUDI </div>
+                          <div class="profile-info-value">
+                            <span class="editable" id="country">{{edit_per.nama_dudi}}</span>
+                          </div>
+                        </div>
+                        <div class="profile-info-row">
+                          <div class="profile-info-name"> 
+                            <i class="ace-icon fa fa-hand-o-right blue"></i> PROSES</div>
+                          <div class="profile-info-value">
+                            <span class="editable" id="signup"><u><b>PERJALANAN PRAKERIN (SMK)</b></u></span>
+                          </div>
+                        </div>
+                        
+                        <div class="profile-info-row">
+                          <div class="profile-info-name">ID Perjalanan</div>
+                          <div class="profile-info-value">
+                            <span class="editable" id="login">
+                              <input type="text" maxlength="4" onkeypress="return event.charCode >=48 && event.charCode <=57" name="id_perjalanan" required placeholder="Enter ID" class="form-control" value="{{edit_per.id_perjalanan}}">
+                            </span>
+                          </div>
+                        </div>
+                        <div class="profile-info-row">
+                          <div class="profile-info-name">Tanggal Perjalanan</div>
+                          <div class="profile-info-value">
+                            <span class="editable" id="login">
+                              <input type="date" name="tgl_perjalanan" required placeholder="Enter Tanggal Perjalanan" class="form-control" value="{{edit_per.tgl_perjalanan}}">
+                            </span>
+                          </div>
+                        </div>
+                        <div class="profile-info-row">
+                          <div class="profile-info-name">Jam Pemberangkatan</div>
+                          <div class="profile-info-value">
+                            <span class="editable" id="login">
+                              <input type="time" name="jam" required placeholder="Enter Tanggal Prakerin" class="form-control" value="{{edit_per.jam}}">
+                            </span>
+                          </div>
+                        </div>
+                        <div class="profile-info-row">
+                          <div class="profile-info-name">Tahun</div>
+                          <div class="profile-info-value">
+                            <span class="editable" id="login">
+                              <input type="text" name="tahun" required placeholder="Enter Tahun" class="form-control" value="{{edit_per.tahun}}">
+                            </span>
+                          </div>
+                        </div>
+                        <div class="profile-info-row">
+                          <div class="profile-info-name">Keterangan</div>
+                          <div class="profile-info-value">
+                            <span class="editable" id="login">
+                              <textarea name="keterangan" class="form-control" required placeholder="Enter Keterangan">{{edit_per.keterangan}}</textarea>
+                            </span>
+                          </div>
+                        </div>
+
+                        
+                    </div></div></div>
+                    <!-- end -->
+                    <div class="hr hr12 dotted"></div>
+                    <div class="center">
+                      <a href="{% url 'Perjalanan'%}" class="btn btn-grey">
+                        <i class="ace-icon fa fa-arrow-left"></i>
+                        Go Back
+                      </a>
+
+                      <button type="submit" class="btn btn-primary">
+                        <i class="ace-icon fa fa-arrow-right icon-on-right bigger-110"></i>
+                        Submit
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+</form>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+</div></div></div>
+{% include "head_bawah.html" %}

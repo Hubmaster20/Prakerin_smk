@@ -1,0 +1,60 @@
+{% include "head_atas.html" %}
+{% include "sub_menu.html" %}
+<div class="row">
+<div class="col-sm-2"></div>
+<div class="col-sm-7">
+<div class="widget-box">
+<div class="widget-header">
+<h4 class="widget-title">FORM TAMBAH DATA SISWA PRAKERIN</h4>
+</div>
+
+<div class="widget-body">
+<div class="widget-main no-padding">
+<form method="post" enctype="multipart/form-data">
+	{% csrf_token %}
+<fieldset>
+<label>NIS</label>
+<input type="text" name="nis" required class="form-control" placeholder="Enter (NIS)" maxlength="12"/>
+<label>Nama Siswa</label>
+<input type="text" name="nama" required class="form-control" placeholder="Enter Nama Siswa" onkeypress="return event.charCode < 48 || event.charCode >57"/>
+<label>Jenis Kelamin</label>
+<select name="jk" class="form-control" required>
+	<option value="">--Select--</option>
+	<option>Laki-Laki</option>
+	<option>Perempuan</option>
+</select>
+<label>Alamat</label>
+<input type="text" name="alamat" required class="form-control" placeholder="Enter Alamat" />
+<label>Kelas</label>
+<select class="form-control" name="kelas" required>
+	<option value="">--Select--</option>
+	<option>XI (TKJ)</option>
+</select>
+<label>Foto</label>
+<input type="file" class="form-control" name="foto" required />
+
+</fieldset>
+
+<div class="form-actions center">
+<a href="{% url 'Siswa' %}" class="btn btn-prev btn-sm">
+<i class="ace-icon fa fa-arrow-left"></i>
+Cancel
+</a>
+<button type="reset" class="btn btn-warning btn-sm">
+	<i class="fa fa-refresh"></i> Reset
+</button>	
+<button type="submit" class="btn btn-sm btn-success">
+Submit
+<i class="ace-icon fa fa-arrow-right icon-on-right bigger-110"></i>
+</button>
+</div>
+</form>
+												</div>
+											</div>
+										</div>
+									</div>
+
+</div>
+
+
+{% include "head_bawah.html" %}

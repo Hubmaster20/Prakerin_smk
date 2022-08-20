@@ -1,0 +1,28 @@
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="/static/web/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/static/web/assets/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+        <script src="/static/web/dashboard.js"></script>
+
+<script src="/static/assets/Tabels_2022/jquery.min.js"></script>
+<script src="/static/assets/Tabels_2022/jquery.dataTables.min.js"></script>
+<script type='text/Javascript'>$(document).ready(function() {
+$('#example').DataTable();
+} );
+</script>     
+
+<script src="/static/assets/Show_modal/jquery-3.2.1.slim.min.js"></script>
+<script src="/static/assets/Show_modal/bootstrap.min.js"></script>
+<script type="text/javascript">
+$('#exampleModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var recipient = button.data('whatever') // Extract info from data-* attributes
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var modal = $(this)
+  modal.find('.modal-title').text('New message to ' + recipient)
+  modal.find('.modal-body input').val(recipient)
+})
+</script>
+      </body>
+</html>

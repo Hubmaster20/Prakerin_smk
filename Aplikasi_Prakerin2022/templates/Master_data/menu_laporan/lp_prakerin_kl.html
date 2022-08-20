@@ -1,0 +1,69 @@
+<!<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Laporan</title>
+  <link href="/static/js_print/styles.css" rel="stylesheet" type="text/css" />
+  <style type="text/css">
+    table {
+    border-collapse: collapse;
+    width: 100%;
+    }
+    table, th, td {
+        border: 1px solid blue;
+    }
+    td {
+    padding: 10px;
+    text-align: left;
+    }
+  </style>
+</head>
+<body>
+<div id="container">
+<div id="body"> 
+<div align="center">
+<h2>SMK DARUL FAIZIN</h2>
+<h3>Jl.Probolinggo, Kec. </h3>
+<h4><strong><u>LAPORAN DATA PRAKERIN</u></strong></h4>
+</div>
+<table id="example1" class="table table-bordered table-striped">
+	<!-- dynamic-table -->
+<thead>
+<tr>
+<th>No</th>
+<th>ID Prakerin</th>
+<th>NIS</th>
+<th>Nama Dudi</th>
+<th>Alamat</th>
+<th>Nama Siswa</th>
+<th>Pembina</th>
+<th>Kelompok</th>
+<th>Jumlah Kelompok</th>
+<th>Tanggal Prakerin</th>
+<th>Keterangan</th>
+</tr>
+</thead>
+<tbody>
+{% for tampil in lp %}
+<tr>
+	<td>{{forloop.counter}}</td>
+	<td>{{tampil.id_prakerin}}</td>
+	<td>{{tampil.nis}}</td>
+	<td>{{tampil.nama_dudi}}</td>
+	<td>{{tampil.alamat}}</td>
+	<td>{{tampil.nama_siswa}}</td>
+	<td>{{tampil.pembina}}</td>
+	<td>{{tampil.kelompok}}</td>
+	<td>{{tampil.jumlah_kelompok}}</td>
+	<td>{{tampil.tgl_prakerin}}</td>
+	<td>{{tampil.keterangan}}</td>
+</tr>
+{% endfor %}								
+</tbody>
+</table>
+								
+</div>
+</div>
+<script>print();</script>
+</body>
+</html>

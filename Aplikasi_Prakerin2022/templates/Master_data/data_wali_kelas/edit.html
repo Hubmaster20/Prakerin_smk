@@ -1,0 +1,62 @@
+{% include "head_atas.html" %}
+{% include "sub_menu.html" %}
+<div class="row">
+<div class="col-sm-2"></div>
+<div class="col-sm-7">
+<div class="widget-box">
+<div class="widget-header">
+<h4 class="widget-title">FORM EDIT DATA PEMBINA</h4>
+</div>
+
+<div class="widget-body">
+<div class="widget-main no-padding">
+<form method="post">
+	{% csrf_token %}
+<fieldset>
+<label>ID Pembina</label>
+<input type="text" name="id_wali" maxlength="4" onkeypress="return event.charCode >=48 && event.charCode <=57" required class="form-control" placeholder="Enter ID Pembina" value="{{edit_walikelas.id_wali}}" />
+<label>Nama Lengkap</label>
+<input type="text" name="nama_lengkap" onkeypress="return event.charCode < 48 || event.charCode >57" required class="form-control" placeholder="Enter Nama Lengkap" value="{{edit_walikelas.nama_lengkap}}" />
+<label>Alamat</label>
+<input type="text" name="alamat" required class="form-control" placeholder="Enter Alamat" value="{{edit_walikelas.alamat}}" />
+<label>Jenis Kelamin</label>
+<select name="jk" class="form-control" required>
+	<option>{{edit_walikelas.jk}}</option>
+	<option value="">--Select--</option>
+	<option>Laki-Laki</option>
+	<option>Perempuan</option>
+</select>
+<label>No-Hp</label>
+<input type="text" name="nohp" maxlength="12" onkeypress="return event.charCode >=48 && event.charCode <=57" required class="form-control" placeholder="Enter Nomor Hp" value="{{edit_walikelas.nohp}}" />
+<label>Status</label>
+<select class="form-control" name="status" required>
+	<option>{{edit_walikelas.status}}</option>
+	<option value="">Select</option>
+	<option>Pembina XI (TKJ)</option>
+</select>
+
+</fieldset>
+
+<div class="form-actions center">
+<a href="{% url 'Wali_kelas' %}" class="btn btn-prev btn-sm">
+<i class="ace-icon fa fa-arrow-left"></i>
+Cancel
+</a>
+<button type="reset" class="btn btn-warning btn-sm">
+	<i class="fa fa-refresh"></i> Reset
+</button>	
+<button type="submit" class="btn btn-sm btn-success">
+Submit
+<i class="ace-icon fa fa-arrow-right icon-on-right bigger-110"></i>
+</button>
+</div>
+</form>
+												</div>
+											</div>
+										</div>
+									</div>
+
+</div>
+
+
+{% include "head_bawah.html" %}

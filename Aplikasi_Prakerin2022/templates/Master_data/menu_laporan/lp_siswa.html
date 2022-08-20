@@ -1,0 +1,59 @@
+<!<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Laporan</title>
+  <link href="/static/js_print/styles.css" rel="stylesheet" type="text/css" />
+  <style type="text/css">
+    table {
+    border-collapse: collapse;
+    width: 100%;
+    }
+    table, th, td {
+        border: 1px solid blue;
+    }
+    td {
+    padding: 10px;
+    text-align: left;
+    }
+  </style>
+</head>
+<body>
+<div id="container">
+<div id="body"> 
+<div align="center">
+<h2>SMK DARUL FAIZIN</h2>
+<h3>Jl.Probolinggo, Kec. </h3>
+<h4><strong><u>LAPORAN DATA SISWA PRAKERIN</u></strong></h4>
+</div>
+<table id="example1" class="table table-bordered table-striped">
+<thead>
+<tr>
+<th>No</th>
+<th>NIS</th>
+<th>Nama Siswa</th>
+<th>(JK)</th>
+<th>Alamat</th>
+<th>Kelas</th>
+<th>Foto</th>
+</tr>
+</thead>
+<tbody>
+{% for tampil in lp %}
+<tr>
+	<td>{{forloop.counter}}</td>
+	<td>{{tampil.nis}}</td>
+	<td>{{tampil.nama}}</td>
+	<td>{{tampil.jk}}</td>
+	<td>{{tampil.alamat}}</td>
+	<td>{{tampil.kelas}}</td>
+	<td>
+   <img src="{{ tampil.foto.url }}" style="width: 50px;">
+
+  </td>
+	
+</tr>
+{% endfor %}								
+</tbody>
+</table>
+	</div></div></body></html>

@@ -1,0 +1,36 @@
+<form method="post" action="{% url 'Tambah_kegiatan' %}" enctype="multipart/form-data">
+  {% csrf_token %}
+      
+          <input type="hidden" name="kelompok" value="{{kelompok}}">
+
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <table>
+          <tr>
+            <td>
+              <img src="/static/Images/admin.png" style="width:80px">
+            </td>
+            <td style="font-size: 18px;"><b>Proses Kegiatan</b></td>
+          </tr>          
+        </table>
+        <hr>
+
+        <label>Nama Kegiatan</label>
+        <input type="text" name="nama_kegiatan"required class="form-control" placeholder="Enter Nama Kegiatan">
+        <label>Deskripsi Kegiatan</label>
+        <textarea class="form-control" required name="deskripsi" placeholder="Enter Deskripsi Kegiatan"></textarea>
+        <label>Upload Kegiatan</label>
+        <input type="file" name="foto" required class="form-control">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Submit..</button>
+      </div>
+    
+
+    </div>
+  </div>
+</div>      
+</form>
